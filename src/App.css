@@ -1,0 +1,642 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+  filter: grayscale(100%);
+}
+.logo.gradient {
+  filter: none;
+  background: linear-gradient(to right, #f7797d, #fbd786, #c6ffdd);
+  -webkit-mask: url(./vite.svg) no-repeat center;
+  mask: url(./vite.svg) no-repeat center;
+  mask-composite: exclude;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #232432aa) grayscale(0%);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #336370aa) grayscale(0%);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+/* Projects Section */
+#projects {
+  padding: 2rem;
+}
+
+#projects h2 {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  font-size: 2.5rem;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.project-card {
+  background-color: rgba(30, 30, 30, 0.85);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+  transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.project-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.35);
+}
+
+.project-card h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.75rem;
+}
+
+.project-card p {
+  font-size: 1rem;
+  color: #cccccc;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.project-card a {
+  display: inline-block;
+  text-decoration: none;
+  background: linear-gradient(to right, #f7797d, #fbd786);
+  color: #111;
+  font-weight: bold;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-position 0.4s ease;
+  background-size: 200% auto;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.project-card a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+  background-position: right center;
+}
+
+.github-link {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.github-link a {
+  display: inline-block;
+  font-size: 1.2rem;
+  text-decoration: none;
+  padding: 0.8rem 1.8rem;
+  border-radius: 25px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-position 0.4s ease;
+  background: linear-gradient(to right, #86A8E7, #7F7FD5, #91EAE4);
+  color: #fff;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  background-size: 200% auto;
+}
+
+.github-link a:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+  background-position: right center;
+}
+
+/* General animation for sections on scroll - enhanced */
+section {
+  opacity: 0;
+  transform: translateY(30px) scale(0.98);
+  transition: opacity 0.7s ease-out, transform 0.7s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+section.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Interests Section */
+#interests {
+  /* padding: 2rem; */ /* Sections already have padding from index.css */
+  /* background-color: #f9f9f9; */ /* Sections have dark theme from index.css */
+}
+
+#interests h2 {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  font-size: 2.5rem;
+  /* gradient-text class should be applied in HTML */
+}
+
+.interests-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  text-align: left;
+}
+
+.interests-list li {
+  background-color: rgba(40, 40, 40, 0.85); /* Slightly different dark shade */
+  padding: 1.5rem;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.15rem;
+  color: #e0e0e0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  /* For individual item animation if section.visible is too general */
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUpItem 0.5s ease-out forwards;
+}
+
+/* Staggered animation for list items */
+.interests-list li:nth-child(1) { animation-delay: 0.1s; }
+.interests-list li:nth-child(2) { animation-delay: 0.2s; }
+.interests-list li:nth-child(3) { animation-delay: 0.3s; }
+.interests-list li:nth-child(4) { animation-delay: 0.4s; }
+.interests-list li:nth-child(5) { animation-delay: 0.5s; }
+.interests-list li:nth-child(6) { animation-delay: 0.6s; }
+/* Add more if you have more interests */
+
+@keyframes fadeInUpItem {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.interests-list li:hover {
+  background-color: rgba(55, 55, 55, 0.95); /* Lighter on hover */
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.interest-icon {
+  font-size: 2rem; /* Larger icons */
+  color: #fbd786; /* Using one of the gradient colors for accent */
+  flex-shrink: 0; /* Prevent icon from shrinking */
+}
+
+/* Responsive adjustments for interests */
+@media (max-width: 768px) {
+  #interests h2 {
+    font-size: 2.2rem;
+  }
+  .interests-list {
+    grid-template-columns: 1fr; /* Stack them on smaller screens */
+    gap: 1rem;
+  }
+  .interests-list li {
+    font-size: 1.1rem;
+    padding: 1.2rem;
+  }
+  .interest-icon {
+    font-size: 1.8rem;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  #projects h2 {
+    font-size: 2.2rem;
+  }
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .project-card {
+    padding: 1.5rem;
+  }
+  .project-card h3 {
+    font-size: 1.5rem;
+  }
+  .project-card p {
+    font-size: 0.95rem;
+  }
+  .project-card a {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+  .github-link a {
+    font-size: 1.1rem;
+  }
+}
+
+/* Education Section */
+#education {
+  /* Basic section styling inherited */
+}
+
+#education h2, #experience h2 {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  font-size: 2.5rem;
+}
+
+.education-entry-grid, .experience-grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.education-entry, .experience-item {
+  background-color: rgba(35, 35, 35, 0.9); /* Consistent dark card background */
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+  transition: transform 0.35s ease-in-out, box-shadow 0.35s ease-in-out;
+  display: flex; /* For icon and content alignment */
+  align-items: flex-start; /* Align items to the top */
+  gap: 1.5rem;
+  opacity: 0; /* For animation */
+  transform: translateY(25px);
+  animation: fadeInUpItem 0.5s ease-out forwards;
+}
+
+/* Staggered animations for Education */
+.education-entry:nth-child(1) { animation-delay: 0.1s; }
+.education-entry:nth-child(2) { animation-delay: 0.2s; }
+
+/* Staggered animations for Experience */
+.experience-item:nth-child(1) { animation-delay: 0.1s; }
+.experience-item:nth-child(2) { animation-delay: 0.2s; }
+.experience-item:nth-child(3) { animation-delay: 0.3s; }
+
+.education-entry:hover, .experience-item:hover {
+  transform: translateY(-7px) scale(1.015);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.education-icon, .experience-icon {
+  font-size: 2.5rem; /* Prominent icons */
+  color: #fbd786; /* Accent color from gradient */
+  margin-top: 5px; /* Align with first line of text better */
+  flex-shrink: 0;
+}
+
+.education-entry h3, .experience-item h3 { /* These already have .gradient-text in JSX */
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.6rem;
+}
+
+.education-entry p, .experience-item .experience-content p {
+  color: #cccccc;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+
+.experience-date {
+  display: block;
+  color: #f7797d; /* Using another gradient color for dates */
+  font-size: 0.9rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.experience-item ul {
+  list-style: none;
+  padding-left: 0; /* Remove default padding */
+  margin: 0;
+}
+
+.experience-item li {
+  color: #b0b0b0;
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+  position: relative;
+  padding-left: 1.5rem; /* Space for custom bullet */
+}
+
+.experience-item li::before {
+  content: '\272A'; /* Star icon or choose another like \2022 (bullet), \2713 (check) */
+  color: #fbd786; /* Accent color for bullets */
+  position: absolute;
+  left: 0;
+  top: 1px; /* Adjust vertical alignment */
+  font-size: 0.9rem;
+}
+
+/* Responsive adjustments for Education and Experience */
+@media (max-width: 768px) {
+  #education h2, #experience h2 {
+    font-size: 2.2rem;
+  }
+  .education-entry, .experience-item {
+    padding: 1.5rem;
+    gap: 1rem;
+  }
+  .education-icon, .experience-icon {
+    font-size: 2rem;
+  }
+  .education-entry h3, .experience-item h3 {
+    font-size: 1.4rem;
+  }
+  .experience-item li {
+    padding-left: 1.2rem;
+  }
+}
+
+/* Skills Summary Section */
+#skills h2 {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  font-size: 2.5rem;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.skill-category-card {
+  background-color: rgba(30, 30, 30, 0.9); /* Dark card background */
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+  transition: transform 0.35s ease-in-out, box-shadow 0.35s ease-in-out;
+  opacity: 0; /* For animation */
+  transform: translateY(25px);
+  animation: fadeInUpItem 0.5s ease-out forwards;
+  border-left: 4px solid transparent; /* For accent border on hover */
+}
+
+/* Staggered animations for Skill Cards */
+.skill-category-card:nth-child(1) { animation-delay: 0.1s; border-left-color: #ff7e5f; }
+.skill-category-card:nth-child(2) { animation-delay: 0.2s; border-left-color: #feb47b; }
+.skill-category-card:nth-child(3) { animation-delay: 0.3s; border-left-color: #fbd786; }
+.skill-category-card:nth-child(4) { animation-delay: 0.4s; border-left-color: #c6ffdd; }
+.skill-category-card:nth-child(5) { animation-delay: 0.5s; border-left-color: #86A8E7; } /* Added a new color for the 5th card */
+
+.skill-category-card:hover {
+  transform: translateY(-7px) scale(1.02);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.35);
+}
+
+.skill-category-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.skill-category-icon {
+  font-size: 2.2rem;
+  color: #fbd786; /* Default icon color, can be overridden by border color logic if desired */
+  flex-shrink: 0;
+}
+
+.skill-category-card:nth-child(1) .skill-category-icon { color: #ff7e5f; }
+.skill-category-card:nth-child(2) .skill-category-icon { color: #feb47b; }
+.skill-category-card:nth-child(3) .skill-category-icon { color: #fbd786; }
+.skill-category-card:nth-child(4) .skill-category-icon { color: #c6ffdd; }
+.skill-category-card:nth-child(5) .skill-category-icon { color: #86A8E7; }
+
+
+.skill-category-card h3 { /* gradient-text is applied in JSX */
+  margin: 0;
+  font-size: 1.6rem;
+}
+
+.skills-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.skill-tag {
+  background-color: rgba(50, 50, 50, 0.8);
+  color: #d0d0d0;
+  padding: 0.5rem 1rem;
+  border-radius: 20px; /* Pill shape */
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+.skill-tag:hover {
+  background-color: #fbd786; /* Accent color on hover */
+  color: #2d3436; /* Dark text for contrast */
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Responsive adjustments for Skills */
+@media (max-width: 768px) {
+  #skills h2 {
+    font-size: 2.2rem;
+  }
+  .skill-category-card h3 {
+    font-size: 1.4rem;
+  }
+  .skill-tag {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.8rem;
+  }
+  .skill-category-icon {
+    font-size: 1.8rem;
+  }
+}
+
+/* Ensure fadeInUpItem animation is defined if not already (it was in previous steps) */
+@keyframes fadeInUpItem {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Contact Section */
+#contact h2 {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  font-size: 2.5rem;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.contact-item {
+  background-color: rgba(30, 30, 30, 0.9);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  transition: transform 0.35s ease-in-out, box-shadow 0.35s ease-in-out, background-color 0.3s ease;
+  opacity: 0; /* For animation */
+  transform: translateY(25px);
+  animation: fadeInUpItem 0.5s ease-out forwards;
+  border-top: 4px solid transparent; /* Accent border on top */
+}
+
+/* Staggered animations & accent colors for Contact Items */
+.contact-item:nth-child(1) { animation-delay: 0.1s; border-top-color: #ff7e5f; }
+.contact-item:nth-child(2) { animation-delay: 0.2s; border-top-color: #feb47b; }
+.contact-item:nth-child(3) { animation-delay: 0.3s; border-top-color: #fbd786; }
+.contact-item:nth-child(4) { animation-delay: 0.4s; border-top-color: #c6ffdd; }
+
+.contact-item:hover {
+  transform: translateY(-7px) scale(1.02);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.35);
+  background-color: rgba(40, 40, 40, 0.95);
+}
+
+.contact-icon {
+  font-size: 2.5rem; /* Prominent icons */
+  flex-shrink: 0;
+  /* Color will be set based on nth-child to match border */
+}
+
+.contact-item:nth-child(1) .contact-icon { color: #ff7e5f; }
+.contact-item:nth-child(2) .contact-icon { color: #feb47b; }
+.contact-item:nth-child(3) .contact-icon { color: #fbd786; }
+.contact-item:nth-child(4) .contact-icon { color: #c6ffdd; }
+
+.contact-details h4 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+  color: #e0e0e0;
+}
+
+.contact-details p, .contact-details a {
+  color: #b0b0b0;
+  text-decoration: none;
+  font-size: 1rem;
+  word-break: break-all; /* Break long email/links if necessary */
+}
+
+.contact-details a:hover {
+  color: #fbd786; /* Accent color on link hover */
+  text-decoration: underline;
+}
+
+/* Responsive adjustments for Contact */
+@media (max-width: 768px) {
+  #contact h2 {
+    font-size: 2.2rem;
+  }
+  .contact-grid {
+    grid-template-columns: 1fr; /* Stack on smaller screens */
+  }
+  .contact-item {
+    padding: 1.5rem;
+    gap: 1rem;
+  }
+  .contact-icon {
+    font-size: 2rem;
+  }
+  .contact-details h4 {
+    font-size: 1.15rem;
+  }
+  .contact-details p, .contact-details a {
+    font-size: 0.95rem;
+  }
+}
+
+/* Ensure fadeInUpItem animation is defined if not already */
+/* @keyframes fadeInUpItem ... */
+
+/* Back to Top Button */
+.back-to-top-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #fbd786; /* Using a bright accent color */
+  color: #2d3436; /* Dark color for icon for contrast */
+  border: none;
+  border-radius: 50%; /* Circular button */
+  width: 50px;
+  height: 50px;
+  font-size: 1.5rem; /* Size of the arrow icon */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  z-index: 1000;
+  opacity: 0; /* Hidden by default, controlled by JS state */
+  transform: translateY(20px); /* Start off-screen for animation */
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out, background-color 0.3s ease;
+  visibility: hidden; /* Ensure it's not interactable when invisible */
+}
+
+/* This will be dynamically added by React when showBackToTop is true */
+/* We can rely on React to render/not render, but if we want CSS transition on appearance, 
+   we need to toggle a class or ensure opacity/transform are used correctly. 
+   The current JS adds/removes the button from DOM, so CSS transitions on opacity/transform upon initial add might not work directly. 
+   Let's assume direct rendering is fine. If a smoother appear/disappear is needed, we'd change JS to toggle a class. 
+   For now, the button appears/disappears. Hover effect will work once it's visible. */
+
+/* To make the button appear with animation, we'd need to always render it and toggle a class for visibility. 
+   Given the current JS, this style is more for when it IS rendered. */
+.back-to-top-button {
+  opacity: 1; /* Make it visible when rendered */
+  transform: translateY(0);
+  visibility: visible;
+}
+
+
+.back-to-top-button:hover {
+  background-color: #f7797d; /* Another accent color on hover */
+  transform: scale(1.1); /* Slightly larger on hover */
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Footer styling - if any additional dynamic aspects are needed */
+footer {
+  /* ... existing footer styles ... */
+  /* The footer should already be animated by the general section animation 
+     if it's treated like a section or has similar animation logic. 
+     If not, we can add it specifically. */
+  opacity: 0; /* Assuming similar animation as sections */
+  transform: translateY(20px);
+  animation: fadeInUpItem 0.5s 0.5s ease-out forwards; /* Delayed to appear after content */
+}
