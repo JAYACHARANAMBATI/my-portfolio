@@ -301,6 +301,11 @@ function App() {
             <p>This project showcases two powerful applications built with LangChain, Streamlit, and Google's Gemini 1.5 Pro model. The applications demonstrate how large language models (LLMs) can be integrated into practical tools for different domains—conversational AI and career enhancement.</p>
             <a href="https://resume-j17r.onrender.com/" target="_blank" rel="noopener noreferrer">View Project</a>
           </div>
+          <div className="project-card">
+            <h3 className="gradient-text">LawGPT – Legal Research Assistant</h3>
+            <p>An AI-powered legal support system designed to assist law students, researchers, and legal professionals in conducting efficient and accurate legal research. Features include GPT-powered legal research, live web search integration, chat-based UI with conversation memory, and context-aware responses.</p>
+            <a href="https://lawgpt.tuxn.tech" target="_blank" rel="noopener noreferrer">View Project</a>
+          </div>
         </div>
         <div className="github-link">
           <a href="https://github.com/JAYACHARANAMBATI?tab=repositories" target="_blank" rel="noopener noreferrer">
