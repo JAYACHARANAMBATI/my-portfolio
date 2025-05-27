@@ -102,7 +102,7 @@ function App() {
                 <FaGithub className="icon" />
               </a>
               <a
-                href="https://www.linkedin.com/in/ambati-jaya-charan-901052254/"
+                href="https://www.linkedin.com/in/jaya-charan-ambati-901052254/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -335,7 +335,7 @@ function App() {
             <FaLinkedin className="contact-icon" />
             <div className="contact-details">
               <h4>LinkedIn</h4>
-              <a href="https://www.linkedin.com/in/ambati-jaya-charan-901052254/" target="_blank" rel="noopener noreferrer">View Profile</a>
+              <a href="https://www.linkedin.com/in/jaya-charan-ambati-901052254/" target="_blank" rel="noopener noreferrer">View Profile</a>
             </div>
           </div>
           <div className="contact-item">
