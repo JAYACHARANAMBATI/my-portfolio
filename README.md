@@ -2,7 +2,7 @@
 
 ## 🔗 Live Demo
 
-[Visit My Portfolio](https://my-portfolio-five-blue-10.vercel.app/)
+[Visit My Portfolio](https://ambatijayacharan.vercel.app/)
 
 ## 🚀 Features
 
